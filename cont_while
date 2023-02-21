@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main(){
+    int contador = 0;
+    int limite = 10;
+    
+    printf("crescente\n");
+    while (contador <= limite){//laço de repetição
+        printf("\n");
+        
+        if(contador == 10){
+            int cont1=10;
+            printf("Decrescente\n");
+            while(cont1 > 0){
+                printf("\n");
+                printf("%d \n", cont1);
+                cont1--;
+            }
+        }
+        
+        printf("%d\n", contador);
+        contador++;//aqui esta sendo feito a soma da variavel contador ate que ela chega no valor limite definido na condição while
+}
