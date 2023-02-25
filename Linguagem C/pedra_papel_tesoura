@@ -1,0 +1,72 @@
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+
+int main()
+{
+
+//função strcmp captura a string digitada pelo usuario
+    char player1[256];
+    char player2[256];
+    
+    printf("Player 1 sua vez..\n");
+    scanf("%s",&player1);
+    
+    printf("Player 2 sua vez..\n");
+    scanf("%s",&player2);
+    
+    if(strcmp(player1, "papel") == 0){
+        
+            if(strcmp(player2, "papel") == 0){
+            printf("Player 1 jogou papel");
+                printf("Empate!!");
+            }else if(strcmp(player2, "tesoura")  == 0){
+                printf("Vitoria player 2!!");
+                
+            }else if(strcmp(player2, "pedra") == 0){
+                printf("Vitoria Player 1");
+                
+            }else{
+                printf("Player 2 digitou uma informacao nao valida..");
+            }
+        
+    }else if(strcmp(player1, "tesoura")  == 0){
+        
+        if(strcmp(player2, "papel") == 0){
+                printf("Vitoria Player1!!");
+            }else if(strcmp(player2, "tesoura")  == 0){
+                printf("Empate!!");
+                
+            }else if(strcmp(player2, "pedra") == 0){
+                printf("Vitoria Player 2!!");
+                
+            }else{
+                printf("Player 2 digitou uma informacao nao valida..");
+            }
+        
+    }else if(strcmp(player1, "pedra") == 0){
+        
+        if(strcmp(player2, "papel") == 0){
+                printf("Vitoria Player2!!");
+            }else if(strcmp(player2, "tesoura")  == 0){
+                printf("Vitoria Player1!!");
+                
+            }else if(strcmp(player2, "pedra") == 0){
+                printf("Empate!!");
+                
+            }else{
+                printf("Player 2 digitou uma informacao nao valida..");
+            }
+        
+    }else{
+        printf("Informação digitada nao e valida");
+    }
+    
+    /*if(player1 == "pedra" || player1 == "Pedra" && player2 == "Tesoura" || player2 == "tesoura"){
+        printf("\nPlayer 1 ganhou essa rodada");
+    }
+    else{
+        printf("\nO Player 2 ganhou essa rodada");
+    }*/
+    
+}
