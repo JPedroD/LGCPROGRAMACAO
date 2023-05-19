@@ -1,0 +1,42 @@
+package exe3aula4somasenha;
+
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+
+public class Exe3Aula4SomaSenha {    
+
+    public static void main(String[] args) {
+        int senha, confirmaSenha, num1, num2, soma, qtdSenha=0;
+        boolean continuar = true;
+        String decisao; 
+        Scanner leia = new Scanner(System.in);
+        System.out.println("Cadastre uma senha:");
+        senha = leia.nextInt();
+        System.out.println("Digite um numero: ");
+        num1 = leia.nextInt();
+        System.out.println("Digite outro numero: ");
+        num2 = leia.nextInt();
+        soma = num1 + num2;
+        while ( (continuar == true) && (qtdSenha) < 3 ) {  
+        System.out.println("Confirme a senha para visualizar o resultado: ");
+        confirmaSenha = leia.nextInt();
+        if (senha == confirmaSenha){
+            System.out.println("A soma do " + num1 + " + " + num2 +
+                    " = " + soma);
+            continuar = false;
+        }
+        else{
+            System.out.println("Senha nao confere!!!");
+            decisao = JOptionPane.showInputDialog( "Deseja tentar digitar a senha novamente ? Digite S ou N: " );
+            if( decisao.equals( "S" ) || (decisao.equals("s")) ){ 
+                qtdSenha++;
+                leia.nextLine();
+                  if (qtdSenha == 3){System.out.println("Senha Bloqueada!");}
+            }else{  
+                System.out.println( "Você saiu!" ) ;  
+                continuar = false; 
+            }  
+        }
+    }
+}
+}

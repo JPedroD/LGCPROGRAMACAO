@@ -1,0 +1,45 @@
+Exe2:
+
+package exemplomediavetor;
+
+
+
+import java.util.Scanner;
+
+
+
+public class ExemploMediaVetor {
+
+
+
+    public static void main(String[] args) {
+
+        Scanner leia = new Scanner(System.in);
+
+        float[] numeros = new float[4];
+
+        float media = 0F, soma = 0F;
+
+        
+
+	    System.out.println("Carregando os numeros no vetor: ");
+
+            for (int i = 0; i < 4; i++){
+
+                System.out.println("Digite o " + (i+1) + "º numero : " );
+
+                numeros[i] = leia.nextFloat();
+
+                soma = soma + numeros[i];
+
+            }
+
+            media = soma/4;
+
+            System.out.printf("%s %.2f", "A media dos numeros carregados = ", media);
+
+    }
+
+    
+
+}

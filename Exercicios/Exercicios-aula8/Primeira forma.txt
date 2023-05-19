@@ -1,0 +1,65 @@
+/*Exercício 4 da Página 109 - Livro da Sandra Puga:
+
+# Elabore um algoritmo que carregue três vetores de 10 elementos com valores fornecidos pelo usuário ou carregados diretamente na aplicação. Crie uma matriz [10, 3] com esses vetores, contudo, a primeira e a terceira colunas da matriz resultante deverão apresentar os elementos na ordem crescente, e a segunda, na ordem decrescente.*/
+
+// Uma possível solução:
+
+package exe4sandrapugamatriz;
+import java.util.Arrays;
+import java.util.Random;
+
+public class Exe4SandraPugaMatriz {
+
+    public static void main(String[] args) {
+        Random random = new Random();
+        int[][] matriz = new int[10][3];
+        int[] vetor1 = new int[10];
+        int[] vetor2 = new int[10];
+        int[] vetor3 = new int[10];
+        int k = 9;
+            for (int i = 0; i < 10; i++) {
+                vetor1[i] = random.nextInt(100);
+                vetor2[i] = random.nextInt(100);
+                vetor3[i] = random.nextInt(100);
+            }
+            Arrays.sort(vetor1);
+            Arrays.sort(vetor2);
+            Arrays.sort(vetor3);
+            System.out.println("\n"); 
+    System.out.print("\nVet1: ");
+    for (int i = 0; i < 10; i++) {
+             System.out.print(vetor1[i] + "|");   
+            }
+    System.out.print("\nVet2: ");
+    for (int i = 0; i < 10; i++) {
+             System.out.print(vetor2[i] + "|");   
+            }
+    System.out.print("\nVet3: ");
+    for (int i = 0; i < 10; i++) {
+             System.out.print(vetor3[i] + "|"); 
+            }
+    for (int i = 0; i < 10; i++) {
+            matriz[i][0] = vetor1[i];
+    }
+    
+    for (int i = 0; i < 10; i++) {
+            matriz[i][1] = vetor2[k];
+            k--;
+    }
+    
+    for (int i = 0; i < 10; i++) {
+            matriz[i][2] = vetor3[i];
+    }
+    
+    System.out.println("\n\nMatriz Resultante: ");
+    for (int i = 0; i < 10; i++) {
+            System.out.print("\n|");
+            for (int j = 0; j < 3; j++) {
+                System.out.printf("%2d%s" , matriz[i][j] , "|");
+            }
+        }
+    System.out.println();
+    }
+    
+}
+

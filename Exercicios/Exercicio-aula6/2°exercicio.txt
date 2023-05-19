@@ -1,0 +1,123 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package aula6;
+
+import java.util.Scanner;
+import javax.swing.JOptionPane;
+/**
+ *
+ * @author 202014527-Joao Pedro Rodrigues da Silva
+ */
+public class Aula6 {
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main( String[ ] args ) {  
+    
+        int idade,sexo,altura, peso, contidade = 0 , contpeso = 0, contpessclov = 0, contsexo = 0,contfem = 0, contmasc = 0; 
+        float porcent = 0,porcentf = 0,porcentm = 0, mediaidade = 0,mediapeso = 0,medialtura = 0, contaltura = 0;
+        boolean continuar = true ;  
+        String decisao,nome,corolhos,corcabelo;  
+  
+        while ( continuar == true ) {  
+            Scanner leia = new Scanner( System.in ) ; 
+            
+            /*Digitar dados*/
+            System.out.println( "Digite o seu nome " ) ;  
+            nome = leia.nextLine( );
+            
+            System.out.println( "Digite o sua idade " ) ;  
+            idade = leia.nextInt();
+            
+            leia.nextLine();
+            System.out.println( "Qual a cor do seus olhos(A - Azuis, V - Verdes, P -pretos ou C - Castanhos)? " ) ;  
+            corolhos = leia.nextLine( );
+                
+            System.out.println( "Digite o seu peso " ) ;  
+            peso = leia.nextInt( );  
+            
+            leia.nextLine();
+            System.out.println( "Qual a cor do seu cabelo (L - loros, C - Castanhos, P -Pretos)? " ) ;  
+            corcabelo = leia.nextLine( ); 
+            
+            System.out.println( "Qual seu sexo(1-Masculino 2-Feminino)? " ) ;  
+            sexo = leia.nextInt( ); 
+            
+            System.out.println( "Qual sua altura em metros? " ) ;  
+            altura = leia.nextInt( );  
+            
+            /*Calculos
+            Media idade
+            mediaidade = (idade+idade)/contidade;
+            Media peso
+            mediapeso = (peso+peso)/contpeso;
+            Media altura
+            medialtura = (altura+altura)/contaltura;
+            porcentagem 
+            (valor*100)/total
+            */
+            
+            /*Media idade participantes
+              MEdia do peso
+              Media altura
+              Porcentagem feminino masculino
+              Quantas olhos verdes e cabelos louros
+            */
+            
+            if (corcabelo.equals("L") && corolhos.equals("V")){ 
+            contpessclov++;  
+            }
+            
+            if ( idade != 0) {  
+                /*Media idade*/
+                contidade++;
+                mediaidade = (idade+idade)/contidade;
+            }
+            
+            if (peso != 0) {  
+                /*Media peso*/
+                contpeso++;
+                mediapeso = (peso+peso)/contpeso;
+            }  
+            
+            if ( altura != 0) {  
+                /*Media altura*/
+                contaltura++;
+                medialtura = (altura+1)/contaltura;
+            } 
+            
+            if(sexo != 0 && sexo == 1 || sexo == 2 ){
+                contsexo++;
+                if(sexo == 2){
+                    contfem++;
+                    porcentf = ((sexo-1)*100)/contfem;
+                }
+                else{
+                        contmasc++; 
+                        porcentm = (sexo*100)/contmasc;
+                }
+                /*porcentagem */
+               
+               
+               
+            }
+  
+            decisao = JOptionPane.showInputDialog( "Deseja fazer outro calculo ? Digite S ou N: " ) ;             
+            if( decisao.equals( "S" ) || (decisao.equals("s")) ){  
+                System.out.println( "Novo Registro" ) ; 
+                leia.nextLine();
+            }else{  
+                System.out.println( "Você saiu!" ) ;  
+                continuar = false ;  
+                System.out.println("Media idade participantes: " + mediaidade);
+                System.out.println(" MEdia do peso: " + mediapeso);
+                System.out.println(" Media altura: " + medialtura);
+                System.out.println(" Porcentagem feminino: " + porcentf + " Porcentagem masculino: "+porcentm +" Geral: "+contsexo);
+                System.out.println("Quantas pessoas dos olhos verdes e cabelos louros: " + contpessclov);
+            }  
+        }  
+    }  
+}
